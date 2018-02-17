@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+    <%= form.label :カテゴリー %>
+    <%= form.select :category, [["カメラマン", "カメラマン"], ["モデル", "モデル"]],id: :post_category %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :内容 %>
     <%= form.text_area :content, id: :post_content %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :写真 %>
     <%= form.file_field :image, id: :post_image %>
     <%= form.hidden_field :image_cache %>
   </div>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  root 'blogs#index'
-  
+  root 'posts#index'
+
   resources :posts
 
   if Rails.env.development?

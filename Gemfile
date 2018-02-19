@@ -34,6 +34,8 @@ gem 'mini_magick'
 gem 'devise'
 gem 'rails_admin', '~> 1.2'
 gem 'cancancan', '~> 2.0'
+gem 'bootstrap'
+gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

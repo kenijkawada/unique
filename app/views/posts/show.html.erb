@@ -21,7 +21,7 @@
     <br />
     <p><%= comment.body %></p>
     <% if user_signed_in? && @post.user == current_user %>
-      <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: '削除してもよろしいですか？' } %></p>
+      <p><%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: '削除してもよろしいですか？' } %></p>
     <% end %>
   </div>
 <% end %>

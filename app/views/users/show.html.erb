@@ -1,3 +1,43 @@
-<h1>My page <%= @user.name %></h1>
+<div class="user-page">
+  <div class="users-header">
+    <p><%= @user.name %></p>
 
- <%= render 'follow_form', user: @user %>
+    <ul>
+    <%= render 'follow_form', user: @user %>
+    <% if current_user == @user %>
+      <li><%= link_to 'メッセージ', conversations_path %></li>
+    <% else %>
+      <li><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post%></li>
+    <% end %>
+      <li><%= link_to 'フォロー中',  posts_path%></li>
+      <li><%= link_to 'フォロワー',  posts_path%></li>
+    </ul>
+
+   <div class="Self-introduction">
+    <p>私のプロフィールについて書きます。</p>
+  </div>
+  </div>
+
+ <div class="user-posts">
+  <div class="container">
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-lg-4 col-sm-6">
+          <% if post.user_id == @user.id %>
+            <%= post.category %>
+            <%= image_tag post.image %>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <%= link_to 'コメントを見る', post , class: "dropdown-item"%>
+                <%= link_to '編集', edit_post_path(post) , class: "dropdown-item"%>
+                <%= link_to '削除', post, method: :delete, data: { confirm: 'Are you sure?' } , class: "dropdown-item"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

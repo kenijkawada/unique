@@ -1,23 +1,34 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import " font-awesome ";
 
 body {
-  background: #ededed !important;
   text-align: center;
-}
 
-.main-content{
-  margin-top: 80px;
-  margin-bottom: 80px;
+  .navbar-brand {
+    font-style: oblique;
+  }
 
-  .post-index-page{
-    background-color: #fff;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 35px;
-    border: 1px solid rgba(0,0,0,0.1);
-    text-align: center;
+  section.contact ul.list-social li.social-twitter a {
+    background-color: #1da1f2;
+  }
+
+  section.contact ul.list-social li.social-facebook a {
+    background-color: #3b5998;
+  }
+
+  section.contact ul.list-social li.social-google-plus a {
+    background-color: #dd4b39;
+  }
+
+  section.contact ul.list-social li a {
+    font-size: 20px;
+    line-height: 50px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 100%;
   }
 }
 
@@ -67,7 +78,7 @@ body {
       color: #fff;
       font-size: 15px;
       cursor: pointer;
-      background: #deb887;
+      background: #ee0979;
     }
 
     .cansel-button {
@@ -86,4 +97,133 @@ body {
       font-size: 16px;
     }
   }
+}
+
+.navbar-custom {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+header.masthead {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(7rem + 72px);
+  padding-bottom: 7rem;
+  background: linear-gradient(0deg,#ff6a00 0,#ee0979 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+
+  h1 {
+    font-style: oblique;
+  }
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #ee0979;
+  border-color: #ee0979;
+}
+
+.rounded-pill {
+  border-radius: 5rem;
+}
+
+.btn-xl {
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.rounded-circle {
+  border-radius: 50%!important;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.posts-index-page{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.new-post, .edit-post, .message-index-page, .post-show-page{
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.message-page{
+  padding-top: 150px;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+
+  .form-control{
+    text-align: center;
+  }
+
+  .current_user_messages{
+    text-align: left;
+  }
+
+  .another_user_messages{
+    text-align: right;
+  }
+}
+
+.user-page{
+  margin-top: 150px;
+  margin-bottom: 50px;
+    max-width: 1140px;
+    margin:0 auto;
+
+    .users-header{
+      max-width: 800px;
+      margin:0 auto;
+      text-align: left;
+
+       p{
+         font-size: 30px;
+       }
+
+       ul{
+         padding: 0;
+         float: left;
+       }
+
+       li{
+         list-style: none;
+         float:left;
+       }
+
+       .Self-introduction{
+         clear: both;
+
+         p{
+           font-size: 15px;
+         }
+       }
+    }
+
+    .user-posts{
+      clear: both;
+      margin-top: 30px;
+    }
+
 }

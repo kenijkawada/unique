@@ -3,6 +3,8 @@
     <%= link_to '以前のメッセージ', '?m=all' %>
   <% end %>
 
+<div class="opponent"><%=  @conversation.target_user(current_user).name  %></div>
+
   <div class="ui segment">
     <% @messages.each do |message| %>
       <% if message.body %>

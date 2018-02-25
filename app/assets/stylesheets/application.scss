@@ -2,8 +2,20 @@
 @import "bootstrap";
 @import " font-awesome ";
 
+html{
+  height: 100%;
+}
+
 body {
+  height: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  .main-area{
+    flex: 1 0 auto;
+
+  }
 
   .navbar-brand {
     font-style: oblique;
@@ -23,12 +35,20 @@ body {
 
   section.contact ul.list-social li a {
     font-size: 20px;
-    line-height: 50px;
+    line-height: 40px;
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     color: #fff;
     border-radius: 100%;
+  }
+
+  .footer{
+    display: flex;
+    justify-content:center;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 100px;
   }
 }
 
@@ -125,7 +145,8 @@ header.masthead {
   cursor: pointer;
 }
 
-.btn-primary {
+
+header .btn-primary {
   background-color: #ee0979;
   border-color: #ee0979;
 }
@@ -159,19 +180,94 @@ img {
 .posts-index-page{
   margin-top: 50px;
   margin-bottom: 50px;
+
+  .search-wrap{
+    height: 50px;
+    max-width: 330px;
+    margin: 0 auto;
+
+    .form-group{
+      float: left;
+    }
+    .actions{
+      float: left;
+      padding-left: 30px;
+    }
+  }
+
+  .container{
+    clear: both;
+    margin-top: 30px;
+
+    .post-username{
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .fa-camera, .fa-user{
+      color: #d3d3d3;
+    }
+
+    .post-comment{
+      color: #000000;
+      text-decoration: none;
+    }
+  }
+
 }
 
-.new-post, .edit-post, .message-index-page, .post-show-page{
-  margin-top: 150px;
+.post-show-page{
+  margin-top: 50px;
   margin-bottom: 50px;
+
+  .fa-camera, .fa-user{
+    color: #d3d3d3;
+  }
+
+  .back-btn{
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .post-username{
+    color: #000000;
+    text-decoration: none;
+  }
 }
 
+.new-post, .edit-post{
+  margin-top: 70px;
+  margin-bottom: 50px;
+
+  h2{
+    margin-bottom: 30px;
+  }
+
+  .btn{
+    margin-top: 20px;
+  }
+}
+
+.message-index-page{
+  padding-top: 70px;
+  padding-bottom: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .image{
+  border-radius: 50%!important;
+  }
+}
 .message-page{
-  padding-top: 150px;
+  padding-top: 100px;
   margin-bottom: 50px;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+
+  .opponent{
+    margin-bottom: 50px;
+  }
 
 
   .form-control{
@@ -188,32 +284,55 @@ img {
 }
 
 .user-page{
-  margin-top: 150px;
-  margin-bottom: 50px;
     max-width: 1140px;
     margin:0 auto;
+    padding-bottom: 50px;
 
     .users-header{
       max-width: 800px;
+      height: 250px;
       margin:0 auto;
+      padding-top:50px;
       text-align: left;
+
+      .image{
+      border-radius: 50%!important;
+      float: left;
+      }
+
+      .header-content{
+        padding-left: 50px;
+        float: left;
+      }
 
        p{
          font-size: 30px;
+         float: left;
+       }
+
+       .follow_form{
+         float: left;
        }
 
        ul{
-         padding: 0;
-         float: left;
+         clear: both;
+         padding:0;
        }
 
        li{
          list-style: none;
          float:left;
+         padding-right: 30px;
+       }
+
+       .list{
+          color: #000000;
+          text-decoration: none;
        }
 
        .Self-introduction{
          clear: both;
+         padding-top: 15px;
 
          p{
            font-size: 15px;
@@ -224,6 +343,37 @@ img {
     .user-posts{
       clear: both;
       margin-top: 30px;
+
+      .fa-camera, .fa-user{
+        color: #d3d3d3;
+      }
     }
 
+}
+
+.btn-outline-primary, .btn-outline-danger , .btn-outline-secondary{
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.post-form{
+
+  .field{
+    margin-bottom: 15px;
+  }
+}
+
+.followed-page{
+  padding-top: 70px;
+  padding-bottom: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .image{
+  border-radius: 50%!important;
+  }
+  .username{
+    color: #000000;
+    text-decoration: none;
+  }
 }

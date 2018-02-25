@@ -9,64 +9,58 @@
   </head>
 
   <body>
-    <!-- Navigation -->
-    <% if user_signed_in? %>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom ">
-        <div class="container">
-          <%= link_to " Photographers and Models", posts_path ,class: "navbar-brand"%>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <%= link_to " 新規投稿", new_post_path , class:"nav-link"%>
+    <div class="main-area">
+      <!-- Navigation -->
+      <% if user_signed_in? %>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom ">
+          <div class="container">
+            <%= link_to " Photographers and Models", posts_path ,class: "navbar-brand"%>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <%= link_to " 新規投稿", new_post_path , class:"nav-link"%>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "nav-link" %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      <% end %>
+
+      <%= yield %>
+      </div>
+
+      <footer class="footer">
+        <section class="contact" id="contact">
+          <div class="container">
+            <ul class="list-inline list-social">
+              <li class="list-inline-item social-twitter">
+                <a href="#">
+                  <i class="fa fa-twitter"></i>
+                </a>
               </li>
-              <li class="nav-item">
-                <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
+              <li class="list-inline-item social-facebook">
+                <a href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
               </li>
-              <li class="nav-item">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "nav-link" %>
+              <li class="list-inline-item social-google-plus">
+                <a href="#">
+                  <i class="fa fa-google-plus"></i>
+                </a>
               </li>
             </ul>
           </div>
-        </div>
-      </nav>
-      <% if notice %>
-      <p class="alert alert-notice"> notice="notice" %="%"></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
-  <% end %>
-
-  <%= yield %>
-
-
-
-  <footer>
-    <section class="contact" id="contact">
-      <div class="container">
-        <ul class="list-inline list-social">
-          <li class="list-inline-item social-twitter">
-            <a href="#">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-facebook">
-            <a href="#">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-google-plus">
-            <a href="#">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <p class="copyright text-muted">Photographers and Models 2018</p>
-  </footer>
-</body>
+        </section>
+        <p class="copyright text-muted">Photographers and Models 2018</p>
+      </footer>
+  </body>
 </html>

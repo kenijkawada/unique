@@ -1,29 +1,42 @@
 <div class="posts-index-page">
 
+<div class="search-wrap">
+  <% provide(:title, 'All posts') %>
+    <%= search_form_for @search do |f| %>
+    <div class="form-group">
+      <%= f.label :category_cont,"カテゴリー" %>
+      <%= f.select :category_cont,["カメラマン", "モデル"] , class: "form-control" %>
+    </div>
+    <div class="actions"><%= f.submit "検索" , class:"btn btn-outline-secondary btn-sm"%></div>
+  <% end %>
+</div>
 
   <div class="container">
     <div class="row">
-      <% @posts.each do |post| %>
+      <% @result.each do |post| %>
         <div class="col-lg-4 col-sm-6">
-            <%= link_to post.user.name, user_path(post.user_id) %>
-            <%= post.category %>
-            <div class="card-img-top"><%= image_tag post.image %></div>
-            <div class="card-body">
-              <p class="card-text"><%= post.content %></p>
-              <%= link_to 'コメントする', post %>
-              <% if post.user == current_user %>
-                <div class="btn-group" role="group">
-                  <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <%= link_to '編集', edit_post_path(post) , class: "dropdown-item"%>
-                    <%= link_to '削除', post, method: :delete, data: { confirm: 'Are you sure?' } , class: "dropdown-item"%>
-                  </div>
+          <%= link_to post.user.name, user_path(post.user_id), class: "post-username" %>
+          <% if post.category == "カメラマン" %>
+           <i class="fa fa-camera"></i>
+           <% else %>
+           <i class="fa fa-user"></i>
+          <% end %>
+          <div class="card-img-top"><%= image_tag post.image %></div>
+          <div class="card-body">
+            <p class="card-text"><%= post.content %></p>
+            <%= link_to 'コメントする', post , class: "post-comment"%>
+            <% if post.user == current_user %>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <%= link_to '編集', edit_post_path(post) , class: "dropdown-item"%>
+                  <%= link_to '削除', post, method: :delete, data: { confirm: 'Are you sure?' } , class: "dropdown-item"%>
                 </div>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>
   </div>
-  <%= link_to 'New Post', new_post_path %>
 </div>

@@ -37,6 +37,7 @@ gem 'cancancan', '~> 2.0'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem "font-awesome-rails"
+gem 'ransack'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

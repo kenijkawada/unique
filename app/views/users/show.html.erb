@@ -1,23 +1,45 @@
 <div class="user-page">
+
   <div class="users-header">
     <%= image_tag @user.image.thumb, class: "image" %>
+
     <div class="header-content">
       <p><%= @user.name %></p>
-        <div class="follow_form"><%= render 'follow_form', user: @user %></div>
-        <ul>
+
+      <div class="follow_form"><%= render 'follow_form', user: @user %></div>
+      <ul>
         <% if current_user == @user %>
           <li><%= link_to 'メッセージ', conversations_path , class: "list"%></li>
         <% else %>
           <li><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post ,class: "list"%></li>
         <% end %>
-        <li><%= link_to 'フォロー中',  user_followed_path(current_user), class: "list"%></li>
-        <li><%= link_to 'フォロワー',  user_follower_path(current_user) , class: "list"%></li>
+        <li><%= link_to 'フォロー中', user_followed_path(current_user), class: "list"%></li>
+        <li><%= link_to 'フォロワー', user_follower_path(current_user) , class: "list"%></li>
       </ul>
+
       <div class="Self-introduction">
-        <p>私のプロフィールについて書きます。</p>
+        <% @user.introductions.each do |user| %>
+          <%= user.body %>
+          <% if user == current_user %>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <%= link_to 'プロフィール編集', edit_introduction_path(user) , class: "dropdown-item"%>
+              </div>
+            </div>
+            <% end %>
+        <% end %>
+        <% if @user.introductions.empty? %>
+          <% if @user == current_user %>
+          <%= link_to 'プロフィール追加', new_introduction_path , class: "dropdown-item"%>
+          <% end %>
+        <% end %>
       </div>
+
     </div>
+
   </div>
+
   <div class="user-posts">
     <div class="container">
       <div class="row">
@@ -25,12 +47,12 @@
           <div class="col-lg-4 col-sm-6">
             <%= image_tag post.image %>
             <% if post.category == "カメラマン" %>
-             <i class="fa fa-camera"></i>
-             <% else %>
-             <i class="fa fa-user"></i>
+              <i class="fa fa-camera"></i>
+            <% else %>
+              <i class="fa fa-user"></i>
             <% end %>
             <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+              <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                 <%= link_to 'コメントを見る', post , class: "dropdown-item"%>
                 <%= link_to '編集', edit_post_path(post) , class: "dropdown-item"%>

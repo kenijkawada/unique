@@ -30,6 +30,7 @@
 
   <div class="actions">
     <%= form.submit :value=>"公開する" ,:class=>"btn btn-outline-primary" %>
+    <%= link_to '戻る', user_path(current_user) ,class:"btn btn-outline-secondary"%>
   </div>
 <% end %>
 </div>

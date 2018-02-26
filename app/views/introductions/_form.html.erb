@@ -1,0 +1,26 @@
+<div class="post-form">
+<%= form_with(model: introduction, local: true) do |form| %>
+  <% if introduction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(introduction.errors.count, "error") %> prohibited this introduction from being saved:</h2>
+
+      <ul>
+      <% introduction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :プロフィール %><br>
+    <%= form.text_area :body, id: :introduction_body ,:size => "40x3" , :maxlength => "120"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit :value=>"公開する" ,:class=>"btn btn-outline-primary" %>
+    <%= link_to '戻る', user_path(current_user) ,class:"btn btn-outline-secondary"%>
+  </div>
+
+<% end %>
+</div>

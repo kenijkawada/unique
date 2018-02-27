@@ -30,6 +30,18 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+  config.action_mailer.default_url_options = { host: 'shrouded-waters-17620.git' }
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings =
+   {
+   user_name: ENV['SENDGRID_USERNAME'],
+   password: ENV['SENDGRID_PASSWORD'],
+   domain: "heroku.com",
+   address: "smtp.sendgrid.net",
+   port: 587,
+   authentication: :plain,
+   enable_starttls_auto: true
+  }
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.

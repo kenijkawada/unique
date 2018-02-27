@@ -14,6 +14,7 @@
   <div class="container">
     <div class="row">
       <% @result.each do |post| %>
+      <div class="card">
         <div class="col-lg-4 col-sm-6">
           <%= link_to post.user.name, user_path(post.user_id), class: "post-username" %>
           <% if post.category == "カメラマン" %>
@@ -36,6 +37,7 @@
             <% end %>
           </div>
         </div>
+      </div>
       <% end %>
     </div>
   </div>

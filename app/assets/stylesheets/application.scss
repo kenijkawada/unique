@@ -11,6 +11,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  background-color: #f7f7f7;
 
   .main-area{
     flex: 1 0 auto;
@@ -141,6 +142,15 @@ header.masthead {
   }
 }
 
+.navbar{
+  background: linear-gradient(0deg,#ff6a00 0,#ee0979 100%);
+
+  .navbar-brand,.nav-link{
+    color: #ffffff;
+  }
+
+}
+
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
@@ -199,6 +209,14 @@ img {
   .container{
     clear: both;
     margin-top: 30px;
+
+    .card{
+      margin-right: 10px;
+    }
+
+    .card-body{
+      width: 338px;
+    }
 
     .post-username{
       color: #000000;
@@ -313,6 +331,10 @@ img {
 
        .follow_form{
          float: left;
+
+         .fa-comment{
+           background-color: #ffffff;
+         }
        }
 
        ul{

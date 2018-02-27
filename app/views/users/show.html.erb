@@ -10,8 +10,10 @@
       <ul>
         <% if current_user == @user %>
           <li><%= link_to 'メッセージ', conversations_path , class: "list"%></li>
+    
         <% else %>
           <li><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post ,class: "list"%></li>
+
         <% end %>
         <li><%= link_to 'フォロー中', user_followed_path(current_user), class: "list"%></li>
         <li><%= link_to 'フォロワー', user_follower_path(current_user) , class: "list"%></li>

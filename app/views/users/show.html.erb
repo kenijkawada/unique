@@ -20,7 +20,7 @@
       <div class="Self-introduction">
         <% @user.introductions.each do |user| %>
           <%= user.body %>
-          <% if user == current_user %>
+          <% if @user == current_user %>
             <div class="btn-group" role="group">
               <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">

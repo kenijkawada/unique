@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :introductions
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  resources :introductions, only: [:new, :edit,:create, :destroy]
+
   devise_for :users
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:show] do
     get '/followed', to: 'users#followed'
     get '/follower', to: 'users#follower'
   end
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   resources :posts do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
   resources :conversations do
     resources :messages

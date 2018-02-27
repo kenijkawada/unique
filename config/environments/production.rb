@@ -30,7 +30,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-  config.action_mailer.default_url_options = { host: 'shrouded-waters-17620.git' }
+  config.action_mailer.default_url_options = { host: 'shrouded-waters-17620' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
    {

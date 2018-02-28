@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  resources :introductions, only: [:new, :edit,:create, :destroy]
+  resources :introductions, only: [:new, :edit,:create, :update ,:destroy]
 
   devise_for :users
-  resources :users, only: [:show] do
+  resources :users, only: [:index,:show] do
     get '/followed', to: 'users#followed'
     get '/follower', to: 'users#follower'
   end

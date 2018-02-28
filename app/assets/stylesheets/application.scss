@@ -52,6 +52,72 @@ body {
     height: 100px;
   }
 }
+.edit-account{
+  margin-top: 60px;
+  margin-bottom: 80px;
+
+  .form-signin {
+    background-color: #fff;
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+    padding: 35px;
+    border: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+
+    h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      font-style: oblique;
+    }
+
+    .form-control {
+      position: relative;
+      border: none;
+      border-bottom: solid thin;
+      border-radius: 0;
+      height: auto;
+      padding: 8px;
+      font-size: 13px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .form-label {
+      font-size: 12px;
+      color: #cfcfcf;
+      text-transform: uppercase;
+    }
+
+    .button {
+      display: block;
+      margin-top: 30px;
+      width: 260px;
+      height: 36px;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      background: #ee0979;
+    }
+
+    .cansel-button {
+      display: block;
+      margin-top: 30px;
+      width: 260px;
+      height: 36px;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      background: #c0c0c0;
+    }
+
+    span {
+      font-size: 16px;
+    }
+  }
+}
 
 .wrapper {
   margin-top: 120px;
@@ -143,7 +209,7 @@ header.masthead {
 }
 
 .navbar{
-  background: linear-gradient(0deg,#ff6a00 0,#ee0979 100%);
+  background: linear-gradient(0deg,#ee0979 0,#ff6a00 100%);
 
   .navbar-brand,.nav-link{
     color: #ffffff;
@@ -216,6 +282,7 @@ img {
 
     .card-body{
       width: 338px;
+      text-align: left;
     }
 
     .post-username{
@@ -230,6 +297,7 @@ img {
     .post-comment{
       color: #000000;
       text-decoration: none;
+      font-size: 12px;
     }
   }
 

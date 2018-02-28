@@ -4,8 +4,11 @@
       <h1 class="masthead-heading mb-0">Photographers and Models</h1>
       <p>〜 写真好きのカメラマンとモデルをつなぐサービス 〜</p>
       <h2 class="masthead-subheading mb-0"></h2>
+      <% if user_signed_in? %>
+      <% else %>
       <a href="users/sign_up" class="btn btn-primary btn-xl rounded-pill mt-5">登録</a>
       <a href="users/sign_in" class="btn btn-primary btn-xl rounded-pill mt-5">ログイン</a>
+      <% end %>
     </div>
   </div>
 </header>

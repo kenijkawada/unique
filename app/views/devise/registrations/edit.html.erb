@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="edit-account">
 <div class="form-signin">
   <h2>Photographers and Models</h2>
   <p>アカウントを編集</p>
@@ -22,7 +22,7 @@
 
   <div class="field">
     <%= f.label :password , class: "sr-only" , for: "inputPassword",class:"form-label" %>
-    <%= f.password_field :password,id: "inputPassword", class: "form-control" %>
+    <%= f.password_field :password,id: "inputPassword", class: "form-control" ,placeholder: "変更する場合のみ入力"%>
   </div>
 
   <div class="field">
@@ -32,7 +32,7 @@
 
   <div class="field">
     <%= f.label :current_password , class: "sr-only" , for: "inputPassword_Current",class:"form-label"%>
-    <%= f.password_field :current_password, id: "inputPassword_Current", class: "form-control"%>
+    <%= f.password_field :current_password, id: "inputPassword_Current", class: "form-control",placeholder: "更新のために必要です"%>
   </div>
 
   <div class="field">

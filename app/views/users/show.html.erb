@@ -10,7 +10,7 @@
       <ul>
         <% if current_user == @user %>
           <li><%= link_to 'メッセージ', conversations_path , class: "list"%></li>
-    
+
         <% else %>
           <li><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post ,class: "list"%></li>
 
@@ -57,8 +57,10 @@
               <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                 <%= link_to 'コメントを見る', post , class: "dropdown-item"%>
+                <% if post.user == current_user %>
                 <%= link_to '編集', edit_post_path(post) , class: "dropdown-item"%>
                 <%= link_to '削除', post, method: :delete, data: { confirm: 'Are you sure?' } , class: "dropdown-item"%>
+                <% end %>
               </div>
             </div>
           </div>

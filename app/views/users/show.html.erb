@@ -9,7 +9,7 @@
   </div>
   <div class="users-header">
     <div class="header-image">
-      <%= image_tag @user.image.thumb, class: "image" %>
+      <%= image_tag(@user.image_url(:thumbnail), :width => 200, :height => 200,class: "image")%>
     </div>
 
     <div class="header-content">

@@ -13,8 +13,18 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :年齢 %><br>
+    <%= form.text_field :age , :maxlength => "6"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :活動エリア %><br>
+    <%= form.text_field :area , :maxlength => "30"%>
+  </div>
+
+  <div class="field">
     <%= form.label :プロフィール %><br>
-    <%= form.text_area :body, id: :introduction_body ,:size => "40x3" , :maxlength => "120"%>
+    <%= form.text_area :body, id: :introduction_body ,:size => "40x3" , :maxlength => "370"%>
   </div>
 
   <div class="actions">

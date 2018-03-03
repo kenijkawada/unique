@@ -453,7 +453,7 @@ img {
     max-width: 800px;
     height: 250px;
     margin: 0 auto;
-    padding-top: 50px;
+    padding: 20px;
     text-align: left;
     background-color: #ffffff;
 
@@ -463,6 +463,7 @@ img {
     }
 
     .header-content {
+      width: 500px;
       padding-left: 50px;
       float: left;
     }
@@ -502,6 +503,14 @@ img {
 
       p {
         font-size: 15px;
+      }
+
+      #accordion{
+        clear: both;
+        cursor: pointer;
+        text-align: left;
+
+
       }
     }
   }

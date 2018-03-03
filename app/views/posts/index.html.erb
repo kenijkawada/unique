@@ -1,27 +1,12 @@
 <div class="posts-index-page">
 
-  <div class="search-wrap">
-    <% provide(:title, 'All posts') %>
-      <%= search_form_for @search do |f| %>
-      <div class="form-group">
-        <%= f.label :category_cont,"カテゴリー" %>
-        <%= f.select :category_cont,["カメラマン", "モデル"] , class: "form-control" %>
-      </div>
-      <div class="actions"><%= f.submit "検索", class:"btn btn-info btn-sm"%></div>
-    <% end %>
-  </div>
-
+  <h2>photogallery</h2>
   <div class="container">
     <div class="row">
       <% @result.each do |post| %>
       <div class="card">
         <div class="col-lg-4 col-sm-6">
           <%= link_to post.user.name, user_path(post.user_id), class: "post-username" %>
-          <% if post.category == "カメラマン" %>
-            <i class="fa fa-camera"></i>
-          <% else %>
-            <i class="fa fa-user"></i>
-          <% end %>
           <div class="card-img-top"><%= image_tag post.image %></div>
           <div class="card-body">
             <p class="card-text"><%= post.content %></p>

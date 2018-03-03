@@ -1,7 +1,16 @@
 <div class="user-page">
 
+  <div class="category">
+    <% if @user.category == "カメラマン" %>
+      <h2>Photographer</h2>
+    <% else %>
+      <h2>Model</h2>
+    <% end %>
+  </div>
   <div class="users-header">
-    <%= image_tag @user.image.thumb, class: "image" %>
+    <div class="header-image">
+      <%= image_tag @user.image.thumb, class: "image" %>
+    </div>
 
     <div class="header-content">
       <p><%= @user.name %></p>
@@ -29,11 +38,11 @@
                 <%= link_to 'プロフィール編集', edit_introduction_path(user) , class: "dropdown-item"%>
               </div>
             </div>
-            <% end %>
+          <% end %>
         <% end %>
         <% if @user.introductions.empty? %>
           <% if @user == current_user %>
-          <%= link_to 'プロフィール追加', new_introduction_path , class: "dropdown-item"%>
+            <%= link_to 'プロフィール追加', new_introduction_path , class: "dropdown-item"%>
           <% end %>
         <% end %>
       </div>
@@ -48,18 +57,13 @@
         <% @user.posts.each do |post| %>
           <div class="col-lg-4 col-sm-6">
             <%= image_tag post.image %>
-            <% if post.category == "カメラマン" %>
-              <i class="fa fa-camera"></i>
-            <% else %>
-              <i class="fa fa-user"></i>
-            <% end %>
             <div class="btn-group" role="group">
               <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                 <%= link_to 'コメントを見る', post , class: "dropdown-item"%>
                 <% if post.user == current_user %>
-                <%= link_to '編集', edit_post_path(post) , class: "dropdown-item"%>
-                <%= link_to '削除', post, method: :delete, data: { confirm: 'Are you sure?' } , class: "dropdown-item"%>
+                  <%= link_to '編集', edit_post_path(post) , class: "dropdown-item"%>
+                  <%= link_to '削除', post, method: :delete, data: { confirm: 'Are you sure?' } , class: "dropdown-item"%>
                 <% end %>
               </div>
             </div>

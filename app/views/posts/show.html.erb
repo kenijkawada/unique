@@ -5,13 +5,6 @@
         <p><%= link_to @post.user.name, user_path(@post.user_id), class: "post-username" %></p>
         <%= image_tag @post.image %>
         <p>
-          <% if @post.category == "カメラマン" %>
-           <i class="fa fa-camera"></i>
-           <% else %>
-           <i class="fa fa-user"></i>
-          <% end %>
-        </p>
-        <p>
           <%= @post.content %>
         </p>
       </div>

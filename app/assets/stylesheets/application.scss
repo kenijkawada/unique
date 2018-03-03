@@ -2,7 +2,7 @@
 @import "bootstrap";
 @import " font-awesome ";
 
-html{
+html {
   height: 100%;
 }
 
@@ -13,9 +13,8 @@ body {
   flex-direction: column;
   background-color: #f7f7f7;
 
-  .main-area{
+  .main-area {
     flex: 1 0 auto;
-
   }
 
   .navbar-brand {
@@ -44,15 +43,16 @@ body {
     border-radius: 100%;
   }
 
-  .footer{
+  .footer {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex: 0 0 auto;
     width: 100%;
     height: 100px;
   }
 }
-.edit-account{
+
+.edit-account {
   margin-top: 60px;
   margin-bottom: 80px;
 
@@ -120,7 +120,7 @@ body {
 }
 
 .wrapper {
-  margin-top: 120px;
+  margin-top: 80px;
   margin-bottom: 80px;
 
   .form-signin {
@@ -191,7 +191,6 @@ body {
   padding-bottom: 1rem;
 }
 
-
 header.masthead {
   position: relative;
   overflow: hidden;
@@ -208,19 +207,18 @@ header.masthead {
   }
 }
 
-.navbar{
+.navbar {
   background: linear-gradient(0deg,#ee0979 0,#ff6a00 100%);
 
-  .navbar-brand,.nav-link{
+  .nav-link,
+  .navbar-brand {
     color: #ffffff;
   }
-
 }
 
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
-
 
 header .btn-primary {
   background-color: #ee0979;
@@ -253,233 +251,310 @@ img {
   border-style: none;
 }
 
-.posts-index-page{
+.users-index-page {
   margin-top: 50px;
   margin-bottom: 50px;
 
-  .search-wrap{
+  h2{
+    padding-bottom: 20px;
+  }
+
+  .search-wrap {
     height: 50px;
-    max-width: 330px;
+    max-width: 500px;
     margin: 0 auto;
 
-    .form-group{
+    .link{
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .form-group {
       float: left;
     }
-    .actions{
+
+    .actions {
       float: left;
-      top:0;
+      top: 0;
       padding-left: 30px;
     }
   }
 
-  .container{
+  .user {
+    max-width: 800px;
+    height: 390px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    background-color: #ffffff;
+
+    .user-image {
+      width: 250px;
+      float: left;
+      margin-left: 10px;
+    }
+
+    .user-content {
+      float: left;
+      width: 500px;
+
+      .username {
+        color: #000000;
+        font-size: 20px;
+        float: left;
+        padding-top: 20px;
+        text-decoration: none;
+      }
+
+      .follow_form {
+        float: right;
+      }
+    }
+
+    .user-body {
+      padding-top: 30px;
+      clear: both;
+    }
+  }
+}
+
+.posts-index-page {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .search-wrap {
+    height: 50px;
+    max-width: 330px;
+    margin: 0 auto;
+
+    .form-group {
+      float: left;
+    }
+
+    .actions {
+      float: left;
+      top: 0;
+      padding-left: 30px;
+    }
+  }
+
+  .container {
     clear: both;
     margin-top: 30px;
 
-    .card{
+    .card {
       margin-right: 10px;
     }
 
-    .card-body{
+    .card-body {
       width: 338px;
       text-align: left;
     }
 
-    .post-username{
+    .post-username {
       color: #000000;
       text-decoration: none;
     }
 
-    .fa-camera, .fa-user{
+    .fa-camera,
+    .fa-user {
       color: #d3d3d3;
     }
 
-    .post-comment{
+    .post-comment {
       color: #000000;
       text-decoration: none;
       font-size: 12px;
     }
   }
-
 }
 
-.post-show-page{
+.post-show-page {
   margin-top: 50px;
   margin-bottom: 50px;
 
-  .fa-camera, .fa-user{
+  .fa-camera,
+  .fa-user {
     color: #d3d3d3;
   }
 
-  .back-btn{
+  .back-btn {
     color: #000000;
     text-decoration: none;
   }
 
-  .post-username{
+  .post-username {
     color: #000000;
     text-decoration: none;
   }
 }
 
-.new-post, .edit-post{
+.edit-post,
+.new-post {
   margin-top: 70px;
   margin-bottom: 50px;
 
-  h2{
+  h2 {
     margin-bottom: 30px;
   }
 
-  .btn{
+  .btn {
     margin-top: 20px;
   }
 }
 
-.message-index-page{
+.message-index-page {
   padding-top: 70px;
   padding-bottom: 50px;
   max-width: 800px;
   margin: 0 auto;
 
-  .image{
-  border-radius: 50%!important;
+  .image {
+    border-radius: 50%!important;
   }
 }
-.message-page{
+
+.message-page {
   padding-top: 30px;
   margin-bottom: 50px;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
 
-  .opponent{
+  .opponent {
     margin-bottom: 50px;
   }
 
-
-  .form-control{
+  .form-control {
     text-align: center;
   }
 
-  .current_user_messages{
+  .current_user_messages {
     text-align: left;
   }
 
-  .another_user_messages{
+  .another_user_messages {
     text-align: right;
   }
 }
 
-.user-page{
-    max-width: 1140px;
-    margin:0 auto;
-    padding-bottom: 50px;
+.user-page {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-bottom: 50px;
 
-    .users-header{
-      max-width: 800px;
-      height: 250px;
-      margin:0 auto;
-      padding-top:50px;
-      text-align: left;
+  h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    font-style: oblique;
+  }
 
-      .image{
-      border-radius: 50%!important;
+  .users-header {
+    max-width: 800px;
+    height: 250px;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: left;
+    background-color: #ffffff;
+
+    .header-image {
       float: left;
-      }
-
-      .header-content{
-        padding-left: 50px;
-        float: left;
-      }
-
-       p{
-         font-size: 30px;
-         float: left;
-       }
-
-       .follow_form{
-         float: left;
-
-         .fa-comment{
-           background-color: #ffffff;
-         }
-       }
-
-       ul{
-         clear: both;
-         padding:0;
-       }
-
-       li{
-         list-style: none;
-         float:left;
-         padding-right: 30px;
-       }
-
-       .list{
-          color: #000000;
-          text-decoration: none;
-       }
-
-       .Self-introduction{
-         clear: both;
-         padding-top: 15px;
-
-         p{
-           font-size: 15px;
-         }
-       }
+      margin-left: 10px;
     }
 
-    .user-posts{
+    .header-content {
+      padding-left: 50px;
+      float: left;
+    }
+
+    p {
+      font-size: 30px;
+      float: left;
+    }
+
+    .follow_form {
+      float: left;
+
+      .fa-comment {
+        background-color: #ffffff;
+      }
+    }
+
+    ul {
       clear: both;
-      margin-top: 30px;
-
-      .fa-camera, .fa-user{
-        color: #d3d3d3;
-      }
+      padding: 0;
     }
 
+    li {
+      list-style: none;
+      float: left;
+      padding-right: 30px;
+    }
+
+    .list {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .Self-introduction {
+      clear: both;
+      padding-top: 15px;
+
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .user-posts {
+    clear: both;
+    margin-top: 30px;
+
+    .fa-camera,
+    .fa-user {
+      color: #d3d3d3;
+    }
+  }
 }
 
-.btn-outline-primary, .btn-outline-danger , .btn-outline-secondary{
+.btn-outline-danger,
+.btn-outline-primary,
+.btn-outline-secondary {
   margin-top: 10px;
   margin-left: 30px;
 }
 
-.post-form{
-
-  .field{
+.post-form {
+  .field {
     margin-bottom: 15px;
   }
 
-  .actions{
+  .actions {
     display: flex;
     justify-content: center;
     margin-right: 30px;
   }
-
-
 }
 
-.followed-page{
+.followed-page {
   padding-top: 70px;
   padding-bottom: 50px;
   max-width: 800px;
   margin: 0 auto;
 
-  .image{
-  border-radius: 50%!important;
+  .image {
+    border-radius: 50%!important;
   }
-  .username{
+
+  .username {
     color: #000000;
     text-decoration: none;
   }
 }
 
-.follow-form{
-
-  .btn-light, .btn-primary{
+.follow-form {
+  .btn-light,
+  .btn-primary {
     margin-top: 10px;
     margin-left: 30px;
   }

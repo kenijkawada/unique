@@ -1,10 +1,37 @@
-<h1>All users</h1>
+<div class="users-index-page">
 
-<ul class="users">
-  <% @users.each do |user| %>
-    <%= link_to user.name, user %>
-    <% if user.id != current_user.id %>
-      <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post%>
-    <% end %><br>
+  <h2>理想のPhotographerとModelを見つけよう</h2>
+
+  <div class="search-wrap">
+    <% provide(:title, 'All posts') %>
+      <%= search_form_for @search do |f| %>
+      <div class="form-group">
+        <%= f.label :category_cont,"カテゴリー" %>
+        <%= f.select :category_cont,["カメラマン", "モデル"] , class: "form-control" %>
+      </div>
+      <div class="actions"><%= f.submit "検索", class:"btn btn-info btn-sm"%></div>
+    <% end %>
+
+    <%= link_to "写真一覧はこちら", posts_path, class: "link" %>
+  </div>
+
+  <% @result.each do |user| %>
+    <div class="user">
+      <div class="user-image">
+        <%= image_tag user.image %>
+      </div>
+      <div class="user-content">
+        <div class="user-name">
+          <%= link_to user.name, user_path(user.id), class: "username" %>
+          <div class="follow_form"><%= render 'follow_form', user: user %></div>
+        </div>
+      <div class="user-body">
+        <% user.introductions.each do |user| %>
+          <%= user.body %>
+        <% end %>
+      </div>
+    </div>
+    </div>
+    <br>
   <% end %>
-</ul>
+</div>

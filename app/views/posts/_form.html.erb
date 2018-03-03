@@ -13,11 +13,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :カテゴリー %>
-    <%= form.select :category,[["カメラマン", "カメラマン"], ["モデル", "モデル"]] , id: :post_title %>
-  </div>
-
-  <div class="field">
     <%= form.label :写真 %>
     <%= form.file_field :image, id: :post_image %>
     <%= form.hidden_field :image_cache %>

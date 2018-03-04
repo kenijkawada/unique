@@ -18,4 +18,4 @@
 
 .byebug_history
 .env
-./config/cloudinary.yml
+cloudinary.yml

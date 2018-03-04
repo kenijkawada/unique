@@ -360,11 +360,10 @@ img {
   margin-top: 50px;
   margin-bottom: 50px;
 
-  .fa-camera,
-  .fa-user {
-    color: #d3d3d3;
+  h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
-
   .back-btn {
     color: #000000;
     text-decoration: none;
@@ -373,6 +372,26 @@ img {
   .post-username {
     color: #000000;
     text-decoration: none;
+  }
+
+  .post-comment-form{
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+
+    .comments {
+      flex: 1 0 auto;
+      overflow: auto;
+      max-height: 400px;
+      background-color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .form{
+      display: flex;
+      flex: 0 0 auto;
+      justify-content: center;
+    }
   }
 }
 

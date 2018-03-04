@@ -3,26 +3,27 @@
   <h2>photogallery</h2>
   <div class="container">
     <div class="row">
-      <% @result.each do |post| %>
-      <div class="card">
-        <div class="col-lg-4 col-sm-6">
-          <%= link_to post.user.name, user_path(post.user_id), class: "post-username" %>
-          <div class="card-img-top"><%= image_tag post.image %></div>
-          <div class="card-body">
-            <p class="card-text"><%= post.content %></p>
-            <%= link_to 'コメントする', post , class: "post-comment"%>
-            <% if post.user == current_user %>
-              <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <%= link_to '編集', edit_post_path(post) , class: "dropdown-item"%>
-                  <%= link_to '削除', post, method: :delete, data: { confirm: 'Are you sure?' } , class: "dropdown-item"%>
+      <% @posts.each do |post| %>
+        <div class="card">
+          <div class="col-lg-4 col-sm-6">
+            <%= link_to post.user.name, user_path(post.user_id), class: "post-username" %>
+            <div class="card-img-top">
+              <%= image_tag(post.image_url(:standard),class:"image") %></div>
+            <div class="card-body">
+              <p class="card-text"><%= post.content %></p>
+              <%= link_to 'コメントする', post , class: "post-comment"%>
+              <% if post.user == current_user %>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <%= link_to '編集', edit_post_path(post) , class: "dropdown-item"%>
+                    <%= link_to '削除', post, method: :delete, data: { confirm: 'Are you sure?' } , class: "dropdown-item"%>
+                  </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>

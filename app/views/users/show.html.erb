@@ -9,7 +9,7 @@
   </div>
   <div class="users-header">
     <div class="header-image">
-      <%= image_tag(@user.image_url(:thumbnail), :width => 200, :height => 200,class: "image")%>
+      <%= image_tag(@user.image_url(:thumbnail), class: "image")%>
     </div>
 
     <div class="header-content">
@@ -63,7 +63,7 @@
       <div class="row">
         <% @user.posts.each do |post| %>
           <div class="col-lg-4 col-sm-6">
-            <%= image_tag(post.image_url(:standard), :width => 250, :height => 350,class: "image")%>
+            <%= image_tag(post.image_url(:standard),class: "image")%>
             <div class="btn-group" role="group">
               <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">

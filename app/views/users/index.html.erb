@@ -18,7 +18,7 @@
   <% @result.each do |user| %>
     <div class="user">
       <div class="user-image">
-        <%= image_tag user.image %>
+        <%= image_tag(user.image_url(:standard))%>
       </div>
       <div class="user-content">
         <div class="user-name">

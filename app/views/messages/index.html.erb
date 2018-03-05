@@ -1,9 +1,7 @@
 <div class="message-page">
-  <% if @over_ten %>
-    <%= link_to '以前のメッセージ', '?m=all' %>
-  <% end %>
+  <div class="content">
   <div class="opponent">
-<%= image_tag @conversation.target_user(current_user).image.thumb, class: "image" %>
+<%= image_tag @conversation.target_user(current_user).image_url(:thumbnail), class: "image" %>
 <%=  @conversation.target_user(current_user).name  %></div>
 
   <div class="ui segment">
@@ -40,11 +38,11 @@
             <% end %>
           <% end %>
         <% end %>
-      </div><br><br><br>
+      </div><br>
 
       <%= form_with(model: [@conversation, @message]) do |f| %>
       <div class="field">
-        <%= f.text_area :body, class: "form-control" %>
+        <%= f.text_area :body, class: "form-control"  , :maxlength => "120"%>
       </div>
       <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
       <div><br>
@@ -52,4 +50,5 @@
       </div>
 
     <% end %>
+  </div>
   </div>

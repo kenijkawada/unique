@@ -2,7 +2,7 @@
   <h2>フォロー中</h2>
 
   <% @user.following.each do |user| %>
-    <%= image_tag user.image.thumb, class: "image" %>
+    <%= image_tag(user.image_url(:thumbnail))%>
     <%= link_to user.name, user_path(user.id), class: "username" %><br>
   <% end %>
 </div>

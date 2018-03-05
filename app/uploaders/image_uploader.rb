@@ -19,7 +19,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :lager do
-    process :resize_to_fill => [350, 500]
+    process :resize_to_fill => [300,400]
   end
 
   version :thumbnail do

@@ -13,8 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body, id: :comment_body ,:maxlength => "30"%>
+    <%= f.text_area :body, id: :comment_body ,:size =>"65,1" ,:maxlength => "90"%>
   </div>
   <%= f.hidden_field :post_id %>
   <%= f.hidden_field :user_id %>

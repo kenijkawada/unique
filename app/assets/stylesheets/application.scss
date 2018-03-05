@@ -322,9 +322,12 @@ img {
   margin-top: 50px;
   margin-bottom: 50px;
 
+  h2{
+    margin-bottom: 30px;
+  }
+
   .container {
     clear: both;
-    margin-top: 30px;
     max-width: 915px;
     margin: 0 auto;
 
@@ -334,24 +337,26 @@ img {
     }
 
     .image{
-      padding-left: 5px;
     }
 
-    .card-body {
+    .body {
       width: 250px;
       text-align: left;
-      padding: 5px 5px 0px 5px;
     }
 
     .post-username {
       color: #000000;
       text-decoration: none;
+      width: 250px;
+      padding-left: 20px;
+      text-align: left;
     }
 
     .post-comment {
       color: #000000;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 13px;
+      padding:5px 5px 0 20px;
     }
   }
 }
@@ -360,9 +365,25 @@ img {
   margin-top: 50px;
   margin-bottom: 50px;
 
+  .row{
+    background-color: #ffffff;
+  }
+
+  .body{
+    max-width: 540px;
+    max-height: 120px;
+    overflow:auto;
+    margin-top: 10px;
+  }
+
+  .name{
+    margin-top: 10px;
+  }
+
   h3{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 20px;
   }
   .back-btn {
     color: #000000;
@@ -380,10 +401,10 @@ img {
     flex-direction: column;
 
     .comments {
+      border: 1px solid #c0c0c0;
       flex: 1 0 auto;
       overflow: auto;
-      max-height: 400px;
-      background-color: #ffffff;
+      max-height: 370px;
       margin-bottom: 20px;
     }
 
@@ -422,13 +443,22 @@ img {
 
 .message-page {
   padding-top: 30px;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   width: 100%;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
 
-  .opponent {
-    margin-bottom: 50px;
+  .content {
+    max-width: 800px;
+    margin:0 auto;
+    padding:10px;
+    max-height: 830px;
+    background-color: #ffffff;
+  }
+
+  .segment{
+    max-height: 460px;
+    overflow-y: scroll;
   }
 
   .form-control {
@@ -437,10 +467,16 @@ img {
 
   .current_user_messages {
     text-align: left;
+    width: 350px;
+    margin-left: 0;
+    word-break: break-all;
   }
 
   .another_user_messages {
     text-align: right;
+    width: 350px;
+    margin-right: 0;
+    box-sizing: border-box;
   }
 }
 

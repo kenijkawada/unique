@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   resources :posts do
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:index, :show, :create, :destroy]
   end
   resources :conversations do
     resources :messages

@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="post-show-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-sm-6">
+        <p><%= link_to @post.user.name, user_path(@post.user_id), class: "post-username" %></p>
+        <%= image_tag(@post.image_url(:lager)) %>
+        <p>
+          <%= @post.content %>
+        </p>
+      </div>
 
-<h1>Comments</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Body</th>
-      <th>User</th>
-      <th>Post</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @comments.each do |comment| %>
-      <tr>
-        <td><%= comment.body %></td>
-        <td><%= comment.user_id %></td>
-        <td><%= comment.post_id %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Comment', new_comment_path %>
+      <div class="col-lg-6 col-sm-6 post-comment-form">
+        <h3>コメントを送りましょう！</h3>
+        <div class="comments">
+        <% @comments.each do |comment| %>
+          <div>
+            <strong><%= comment.user.name %></strong>
+            <br/>
+            <p><%= comment.body %></p>
+            <% if user_signed_in? && @post.user == current_user %>
+              <p><%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: '削除してもよろしいですか？' } %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+        <div class="form">
+          <%= render 'comments/form', comment: @comment %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to '戻る', posts_path, class:"back-btn" %>
+</div>

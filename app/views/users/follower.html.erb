@@ -2,7 +2,7 @@
   <h2>フォローワー</h2>
 
   <% @user.followers.each do |user| %>
-    <%= image_tag(@user.image_url(:thumbnail))%>
+    <%= image_tag(user.image_url(:thumbnail))%>
     <%= link_to user.name, user_path(user.id), class: "username" %><br>
   <% end %>
 </div>

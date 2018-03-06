@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-  
+  before_action :authenticate_user!, only: [:index, :show, :followed, :follower]
+
   def index
     @users = User.all
     @search = User.ransack(params[:q])

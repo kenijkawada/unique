@@ -21,6 +21,28 @@ body {
     font-style: oblique;
   }
 
+  section.contact ul.list-social li.social-twitter a {
+    background-color: #1da1f2;
+  }
+
+  section.contact ul.list-social li.social-facebook a {
+    background-color: #3b5998;
+  }
+
+  section.contact ul.list-social li.social-google-plus a {
+    background-color: #dd4b39;
+  }
+
+  section.contact ul.list-social li a {
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border-radius: 100%;
+  }
+
   .footer {
     display: flex;
     justify-content: center;
@@ -196,6 +218,8 @@ header.masthead {
   .navbar-toggler {
     border: 1px solid #fff;
   }
+
+
 }
 
 .btn:not(:disabled):not(.disabled) {

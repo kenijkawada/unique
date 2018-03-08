@@ -71,6 +71,6 @@ class IntroductionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def introduction_params
-      params.require(:introduction).permit(:body, :user_id, :age, :area)
+      params.require(:introduction).permit(:body, :user_id, :age, :area, :image)
     end
 end

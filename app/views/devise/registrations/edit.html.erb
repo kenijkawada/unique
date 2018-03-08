@@ -35,12 +35,6 @@
     <%= f.password_field :current_password, id: "inputPassword_Current", class: "form-control",placeholder: "更新のために必要です"%>
   </div>
 
-  <div class="field">
-    <%= f.label :プロフィール写真 ,class: "sr-only" , for: "image",class:"form-label" %>
-    <%= f.file_field :image, id: "image", class: "form-control"%>
-    <%= f.hidden_field :image_cache %>
-  </div>
-
   <div class="actions">
     <%= f.submit "更新", class: "button" %><br>
   </div>

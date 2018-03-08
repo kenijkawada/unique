@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20180303090559) do
     t.datetime "updated_at", null: false
     t.string "age"
     t.string "area"
+    t.text "image"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -87,7 +88,6 @@ ActiveRecord::Schema.define(version: 20180303090559) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.boolean "admin", default: false
-    t.string "image"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

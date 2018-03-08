@@ -9,7 +9,7 @@
   </div>
   <div class="users-header">
     <div class="header-image">
-      <%= image_tag(@user.image_url(:thumbnail), class: "image")%>
+      <%= image_tag(@introduction.image_url(:thumbnail), class: "image")%>
     </div>
 
     <div class="header-content">
@@ -35,7 +35,7 @@
           <li><p>活動エリア：<%= user.area %></p></li>
        </ul>
          <dl id="accordion">
-           <dt>プロフィール</dt>
+           <dt>プロフィールはこちら</dt>
            <dd><%= user.body %></dd>
          </dl>
           <% if @user == current_user %>
@@ -49,7 +49,7 @@
         <% end %>
         <% if @user.introductions.empty? %>
           <% if @user == current_user %>
-            <%= link_to 'プロフィール追加', new_introduction_path , class: "dropdown-item"%>
+            <%= link_to 'まずはプロフィールを追加しましょう', new_introduction_path , class: "dropdown-item"%>
           <% end %>
         <% end %>
       </div>

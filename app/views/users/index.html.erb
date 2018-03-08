@@ -18,7 +18,9 @@
   <% @result.each do |user| %>
     <div class="user">
       <div class="user-image">
-        <%= image_tag(user.image_url(:standard))%>
+        <% user.introductions.each do |u| %>
+          <%= image_tag(u.image_url(:standard))%>
+        <% end %>
       </div>
       <div class="user-content">
         <div class="user-name">
@@ -27,6 +29,8 @@
         </div>
       <div class="user-body">
         <% user.introductions.each do |user| %>
+          <%= user.age %><br>
+          <%= user.area %><br>
           <%= user.body %>
         <% end %>
       </div>

@@ -9,7 +9,9 @@
   </div>
   <div class="users-header">
     <div class="header-image">
-      <%= image_tag(@introduction.image_url(:thumbnail), class: "image")%>
+      <% @user.introductions.each do |user| %>
+        <%= image_tag(user.image_url(:thumbnail), class: "image")%>
+      <% end %>
     </div>
 
     <div class="header-content">
@@ -49,7 +51,7 @@
         <% end %>
         <% if @user.introductions.empty? %>
           <% if @user == current_user %>
-            <%= link_to 'まずはプロフィールを追加しましょう', new_introduction_path , class: "dropdown-item"%>
+            <%= link_to 'まずはプロフィールを追加しましょう！', new_introduction_path , class: "dropdown-item"%>
           <% end %>
         <% end %>
       </div>

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @introduction = Introduction.find(params[:id])
+
   end
 
   def followed

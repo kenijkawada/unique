@@ -19,4 +19,4 @@
 .byebug_history
 .env
 cloudinary.yml
-.Gemfile.lock
+Gemfile.lock

@@ -1,9 +1,11 @@
 <div class="message-index-page">
-    <h2>メッセージ一覧</h2>
-    <% @conversations.each do |conversation| %>
-        <% if conversation.target_user(current_user).present? %>
-          <%= image_tag conversation.target_user(current_user).image_url(:thumbnail)%>
-          <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%><br>
-        <% end %>
+  <h2>メッセージ一覧</h2>
+  <% @conversations.each do |conversation| %>
+    <% if conversation.target_user(current_user).present? %>
+      <% conversation.target_user(current_user).introductions.each do |introduction| %>
+        <%= image_tag(introduction.image_url(:thumbnail))%>
+      <% end %>
+      <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%><br>
     <% end %>
+  <% end %>
 </div>

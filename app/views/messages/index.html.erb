@@ -1,30 +1,18 @@
 <div class="message-page">
   <div class="content">
-  <div class="opponent">
-<%= image_tag @conversation.target_user(current_user).image_url(:thumbnail), class: "image" %>
-<%=  @conversation.target_user(current_user).name  %></div>
+    <div class="opponent">
+      <% @conversation.target_user(current_user).introductions.each do |introduction| %>
+        <%= image_tag(introduction.image_url(:thumbnail))%>
+        <% end %>
+      <%= link_to @conversation.target_user(current_user).name, user_path(@conversation.target_user(current_user).id)%></div>
 
-  <div class="ui segment">
-    <% @messages.each do |message| %>
-      <% if message.body %>
-        <% user = User.find(message.user_id) %>
-          <% if current_user.name == user.name %>
-            <div class="item">
-              <div class="content current_user_messages">
-                <div class="header">
-                  <strong><%= user.name %></strong>
-                  <%= message.message_time %></div><br>
-                <div class="list">
-                  <div class="item">
-                    <%= message.body %><br>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% else %>
-            <% user = User.find(message.user_id) %>
+    <div class="ui segment">
+      <% @messages.each do |message| %>
+        <% if message.body %>
+          <% user = User.find(message.user_id) %>
+            <% if current_user.name == user.name %>
               <div class="item">
-                <div class="content another_user_messages">
+                <div class="content current_user_messages">
                   <div class="header">
                     <strong><%= user.name %></strong>
                     <%= message.message_time %></div><br>
@@ -35,20 +23,34 @@
                   </div>
                 </div>
               </div>
+            <% else %>
+              <% user = User.find(message.user_id) %>
+                <div class="item">
+                  <div class="content another_user_messages">
+                    <div class="header">
+                      <strong><%= user.name %></strong>
+                      <%= message.message_time %></div><br>
+                    <div class="list">
+                      <div class="item">
+                        <%= message.body %><br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-      </div><br>
+        </div><br>
 
-      <%= form_with(model: [@conversation, @message]) do |f| %>
-      <div class="field">
-        <%= f.text_area :body, class: "form-control"  , :maxlength => "120"%>
-      </div>
-      <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-      <div><br>
-        <%= f.submit "メッセージを送る" %>
-      </div>
+        <%= form_with(model: [@conversation, @message]) do |f| %>
+        <div class="field">
+          <%= f.text_area :body, class: "form-control" , :maxlength => "120"%>
+        </div>
+        <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+        <div><br>
+          <%= f.submit "メッセージを送る" %>
+        </div>
 
-    <% end %>
-  </div>
+      <% end %>
+    </div>
   </div>

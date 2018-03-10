@@ -39,6 +39,7 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'ransack'
 gem 'cloudinary'
+gem 'rails-i18n'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

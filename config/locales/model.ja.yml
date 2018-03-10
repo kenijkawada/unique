@@ -20,3 +20,16 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+      introduction:
+        age: "年齢"
+        are: "活動エリア"
+        body: "プロフィール"
+        image: "写真"
+      post:
+        category: "カテゴリー"
+        content: "内容"
+        image: "写真"
+      message:
+        body: "メッセージ"
+      comment:
+        body: "コメント"

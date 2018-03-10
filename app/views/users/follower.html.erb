@@ -1,10 +1,12 @@
 <div class="followed-page">
-  <h2>フォローワー</h2>
+  <h2>フォロワー</h2>
 
   <% @user.followers.each do |user| %>
     <% user.introductions.each do |introduction| %>
+    <div class="followed_users">
       <%= image_tag(introduction.image_url(:thumbnail))%>
     <% end %>
     <%= link_to user.name, user_path(user.id), class: "username" %><br>
   <% end %>
+    </div>
 </div>

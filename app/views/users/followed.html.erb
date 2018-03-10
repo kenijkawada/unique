@@ -1,12 +1,11 @@
 <div class="followed-page">
   <h2>フォロー中</h2>
-
+  <div class="followed_users">
   <% @user.following.each do |user| %>
     <% user.introductions.each do |introduction| %>
-    <div class="followed_users">
-      <%= image_tag(introduction.image_url(:thumbnail))%>
+        <%= image_tag(introduction.image_url(:thumbnail))%>
+      <% end %>
+      <%= link_to user.name, user_path(user.id), class: "username" %><br><br>
     <% end %>
-    <%= link_to user.name, user_path(user.id), class: "username" %><br>
-  <% end %>
-</div>
+  </div>
 </div>

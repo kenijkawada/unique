@@ -2,7 +2,7 @@
 <%= form_with(model: introduction, local: true) do |form| %>
   <% if introduction.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(introduction.errors.count, "error") %> prohibited this introduction from being saved:</h2>
+      <h2>エラーにより保存できません</h2>
 
       <ul>
       <% introduction.errors.full_messages.each do |message| %>

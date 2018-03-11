@@ -2,6 +2,9 @@ ja:
   activerecord:
     errors:
       messages:
+        not_saved:
+          one: "エラーにより、この %{resource} を保存できません："
+          other: "%{count} 個のエラーにより、この %{resource} を保存できません："
         record_invalid: "バリデーションに失敗しました: %{errors}"
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
